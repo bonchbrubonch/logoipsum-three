@@ -57,6 +57,7 @@ body {
 	font-weight: 400;
 	line-height: 140%;
 	color: rgb(0, 8, 21);
+	letter-spacing: 0.5px;
 }
 
 body.lock {
@@ -77,8 +78,19 @@ body {
 	color: rgb(0, 8, 21);
 }
 
+.title {
+	color: #000815;
+	font-family: "Sora", sans-serif;
+	font-size: 44px;
+	font-weight: 600;
+	line-height: 120%;
+}
+
 .main {
 	flex: 1 0 auto;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: bottom;
 }
 
 .footer {
@@ -86,6 +98,8 @@ body {
 }
 
 .container {
+	position: relative;
+	z-index: 1;
 	max-width: 1250px;
 	width: 100%;
 	margin: 0 auto;
@@ -111,7 +125,7 @@ body {
 	transition: linear .2s;
 
 	svg {
-		margin: 0 0 0 10px;
+		margin: 3% 0 0 10px;
 
 		path {
 			transition: linear .2s;
@@ -140,13 +154,43 @@ body {
 .irs--flat .irs-single {
 	left: 50% !important;
 	transform: translateX(-50%);
-}
-
-.irs--flat .irs-single:before {
-	display: none;
 	color: rgb(33, 154, 130);
 	font-family: "Sora", sans-serif;
 	font-size: 30px;
 	font-weight: 400;
-	line-height: 0px;
+	border: 1px solid rgb(33, 154, 130);
+	border-radius: 8px;
+	background: rgb(227, 242, 239);
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	top: -45px;
+}
+
+.irs--flat .irs-single:before {
+	display: none;
+}
+
+.irs--flat .irs-line {
+	border: 1px solid rgba(33, 154, 130, 0.5);
+	border-radius: 2px;
+	background: rgb(227, 242, 239);
+}
+
+.irs--flat .irs-bar {
+	border-radius: 2px;
+	background: rgb(33, 154, 130);
+}
+
+.irs--flat .irs-handle {
+	width: 50px;
+	border-radius: 2px;
+	box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+	background: rgb(33, 154, 130);
+	cursor: pointer;
+}
+
+.irs--flat .irs-handle>i:first-child {
+	display: none;
 }
