@@ -5,6 +5,19 @@ $(function () {
 		from: 10000,
 		postfix: " lei"
 	});
+
+	$(".accordeon dd").hide().prev().click(function () {
+		$(this).parents(".accordeon").find("dd").not(this).slideUp().prev().removeClass("active");
+		$(this).next().not(":visible").slideDown().prev().addClass("active");
+		$("dl").removeClass("open");
+		$(this).parent().toggleClass("open");
+	});
+
+	// Відкриваємо перший елемент за замовчуванням і додаємо клас open до dl
+	$(".accordeon dl:first").addClass("open").find("dt:first").addClass("active").next("dd").show();
+
+
+
 })
 
 

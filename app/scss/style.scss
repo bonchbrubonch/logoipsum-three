@@ -240,6 +240,7 @@
 
 .partners {
 	padding: 75px 0 60px;
+
 	.title {
 		margin: 0 0 40px 0;
 	}
@@ -292,6 +293,90 @@
 				object-fit: contain;
 			}
 		}
+	}
+}
+
+.faq {
+	padding: 60px 0 140px;
+
+	.title {
+		margin: 0 0 40px 0;
+	}
+
+	&__inner {
+		border-radius: 40px;
+		background: rgb(255, 255, 255);
+		padding: 60px;
+	}
+	.accordeon{
+		max-width: 1000px;
+		width: 1000%;
+		margin: 0 auto;
+	}
+	dl {
+		margin: 0 0 25px 0;
+		padding: 30px;
+		border-radius: 20px;
+		transition: linear .2s;
+
+		ol {
+			padding: 0;
+
+			li {
+				position: relative;
+				counter-increment: counter;
+				margin: 0 0 5px 0;
+				padding: 0 0 0 23px;
+
+				&::before {
+					content: counter(counter) ".";
+					color: #000;
+					position: absolute;
+					left: 0;
+					top: 0px;
+				}
+			}
+		}
+	}
+
+	dl.open {
+		background: rgb(226, 242, 239);
+		pointer-events: none;
+
+		dt {
+			&::after {
+				transform: translateY(-50%) rotate(90deg);
+			}
+		}
+	}
+
+	dt {
+		padding: 0 50px 0 0;
+		font-family: "Sora", sans-serif;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 140%;
+		text-transform: uppercase;
+		cursor: pointer;
+		position: relative;
+		border-bottom: 1px solid rgb(0, 8, 21);
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			width: 15px;
+			height: 2px;
+			background-color: #219A82;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0;
+			transition: linear .2s;
+		}
+	}
+
+	dd {
+		margin: 10px 0 0 0;
+		padding: 25px 0 0 0;
 	}
 }
 
